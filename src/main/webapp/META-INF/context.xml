@@ -1,0 +1,8 @@
+<Context>
+    <JarScanner>
+        <JarScanFilter
+                tldScan="spring-*, jackson-*, tomcat-*, jakarta.servlet-api-*"
+                tldSkip="*.jar"
+        />
+    </JarScanner>
+</Context>
