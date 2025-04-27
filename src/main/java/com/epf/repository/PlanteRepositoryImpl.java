@@ -113,4 +113,4 @@ public class PlanteRepositoryImpl implements PlanteRepository {
         }
         return effet.name().toLowerCase().replace("_", " ");
     }
-    }
+}

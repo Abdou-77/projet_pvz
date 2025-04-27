@@ -17,6 +17,7 @@ com/epf/service/MapServiceImpl.class
 com/epf/dto/PlanteMapper.class
 com/epf/exception/ResourceNotFoundException.class
 com/epf/config/JdbcCleanupListener.class
+com/epf/config/OpenApiConfig.class
 com/epf/config/AppConfig.class
 com/epf/dto/PlanteDTO.class
 com/epf/Main.class

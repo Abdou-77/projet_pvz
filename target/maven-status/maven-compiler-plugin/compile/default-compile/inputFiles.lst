@@ -1,6 +1,7 @@
 /home/abdou/Downloads/projet_pvz/src/main/java/com/epf/Main.java
 /home/abdou/Downloads/projet_pvz/src/main/java/com/epf/config/AppConfig.java
 /home/abdou/Downloads/projet_pvz/src/main/java/com/epf/config/JdbcCleanupListener.java
+/home/abdou/Downloads/projet_pvz/src/main/java/com/epf/config/OpenApiConfig.java
 /home/abdou/Downloads/projet_pvz/src/main/java/com/epf/config/WebConfig.java
 /home/abdou/Downloads/projet_pvz/src/main/java/com/epf/config/WebInitializer.java
 /home/abdou/Downloads/projet_pvz/src/main/java/com/epf/controller/HealthController.java
