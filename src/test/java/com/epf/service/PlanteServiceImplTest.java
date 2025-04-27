@@ -17,7 +17,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class PlanteServiceTest {
+class PlanteServiceImplTest {
 
     @Mock
     private PlanteRepository planteRepository;
@@ -33,7 +33,7 @@ class PlanteServiceTest {
 
         samplePlante = new Plante();
         samplePlante.setIdPlante(1L);
-        samplePlante.setName("Tournesol");
+        samplePlante.setnom("Tournesol");
         samplePlante.setPointDeVie(100);
         samplePlante.setAttaqueParSeconde(0.0);
         samplePlante.setDegatAttaque(0);
@@ -51,7 +51,7 @@ class PlanteServiceTest {
         List<Plante> result = planteService.getAllPlantes();
 
         assertEquals(1, result.size());
-        assertEquals("Tournesol", result.get(0).getName());
+        assertEquals("Tournesol", result.get(0).getnom());
         verify(planteRepository, times(1)).findAll();
     }
 
@@ -61,7 +61,7 @@ class PlanteServiceTest {
 
         Plante result = planteService.getPlanteById(1L);
 
-        assertEquals("Tournesol", result.getName());
+        assertEquals("Tournesol", result.getnom());
         verify(planteRepository, times(1)).findById(1L);
     }
 

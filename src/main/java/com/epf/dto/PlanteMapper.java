@@ -6,8 +6,7 @@ public class PlanteMapper {
     public static PlanteDTO toDTO(Plante plante) {
         return new PlanteDTO(
                 plante.getIdPlante(),
-                plante.getName(),
-                plante.getSpecies(),
+                plante.getnom(),
                 plante.getPointDeVie(),
                 plante.getAttaqueParSeconde(),
                 plante.getDegatAttaque(),
@@ -20,8 +19,7 @@ public class PlanteMapper {
 
     public static Plante toEntity(PlanteDTO dto) {
         Plante plante = new Plante();
-        plante.setName(dto.name() != null ? dto.name() : "Default Plant");
-        plante.setSpecies(dto.species() != null ? dto.species() : "Default Species");
+        plante.setnom(dto.nom() != null ? dto.nom() : "Default Plant");
         plante.setPointDeVie(dto.pointDeVie() != null ? dto.pointDeVie() : 100);
         plante.setAttaqueParSeconde(dto.attaqueParSeconde() != null ? dto.attaqueParSeconde() : 1.0);
         plante.setDegatAttaque(dto.degatAttaque() != null ? dto.degatAttaque() : 10);

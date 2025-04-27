@@ -5,6 +5,7 @@ import com.epf.model.Map;
 public class MapMapper {
     public static MapDTO toDTO(Map map) {
         return new MapDTO(
+                map.getIdMap(),
                 map.getLigne(),
                 map.getColonne(),
                 map.getCheminImage()

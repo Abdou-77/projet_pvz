@@ -47,6 +47,13 @@ public class WebConfig implements WebMvcConfigurer {
                 .addResourceLocations("/images/");
     }
 
+    @Override
+    public void configureDefaultServletHandling(org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+
+
+
     @Bean
     @Override
     public Validator getValidator() {

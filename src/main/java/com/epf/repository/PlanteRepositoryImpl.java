@@ -23,12 +23,12 @@ public class PlanteRepositoryImpl implements PlanteRepository {
     private static final String SELECT_ALL = "SELECT * FROM Plante";
     private static final String SELECT_BY_ID = "SELECT * FROM Plante WHERE id_plante = ?";
     private static final String INSERT = """
-        INSERT INTO Plante (name, species, point_de_vie, attaque_par_seconde, 
+        INSERT INTO Plante (nom, point_de_vie, attaque_par_seconde, 
         degat_attaque, cout, soleil_par_seconde, effet, chemin_image)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         """;
     private static final String UPDATE = """
-        UPDATE Plante SET name = ?, species = ?, point_de_vie = ?, 
+        UPDATE Plante SET nom = ?, point_de_vie = ?, 
         attaque_par_seconde = ?, degat_attaque = ?, cout = ?, 
         soleil_par_seconde = ?, effet = ?, chemin_image = ?
         WHERE id_plante = ?
@@ -56,15 +56,14 @@ public class PlanteRepositoryImpl implements PlanteRepository {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, plante.getName());
-            ps.setString(2, plante.getSpecies());
-            ps.setInt(3, plante.getPointDeVie());
-            ps.setDouble(4, plante.getAttaqueParSeconde());
-            ps.setInt(5, plante.getDegatAttaque());
-            ps.setInt(6, plante.getCout());
-            ps.setDouble(7, plante.getSoleilParSeconde());
-            ps.setString(8, convertEffetToDBFormat(plante.getEffet()));
-            ps.setString(9, plante.getCheminImage());
+            ps.setString(1, plante.getnom());
+            ps.setInt(2, plante.getPointDeVie());
+            ps.setDouble(3, plante.getAttaqueParSeconde());
+            ps.setInt(4, plante.getDegatAttaque());
+            ps.setInt(5, plante.getCout());
+            ps.setDouble(6, plante.getSoleilParSeconde());
+            ps.setString(7, convertEffetToDBFormat(plante.getEffet()));
+            ps.setString(8, plante.getCheminImage());
             return ps;
         }, keyHolder);
 
@@ -74,8 +73,7 @@ public class PlanteRepositoryImpl implements PlanteRepository {
     @Override
     public void update(Plante plante) {
         jdbcTemplate.update(UPDATE,
-                plante.getName(),
-                plante.getSpecies(),
+                plante.getnom(),
                 plante.getPointDeVie(),
                 plante.getAttaqueParSeconde(),
                 plante.getDegatAttaque(),
@@ -95,8 +93,7 @@ public class PlanteRepositoryImpl implements PlanteRepository {
     private Plante mapRow(ResultSet rs, int rowNum) throws SQLException {
         Plante plante = new Plante();
         plante.setIdPlante(rs.getLong("id_plante"));
-        plante.setName(rs.getString("name"));
-        plante.setSpecies(rs.getString("species"));
+        plante.setnom(rs.getString("nom"));
         plante.setPointDeVie(rs.getInt("point_de_vie"));
         plante.setAttaqueParSeconde(rs.getDouble("attaque_par_seconde"));
         plante.setDegatAttaque(rs.getInt("degat_attaque"));

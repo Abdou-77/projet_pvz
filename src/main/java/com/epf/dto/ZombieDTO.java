@@ -4,23 +4,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
 
 public class ZombieDTO {
+    @JsonProperty("id_zombie")
     private Long idZombie;
 
     @NotBlank(message = "Name is required")
     private String nom;
-
+    @JsonProperty("point_de_vie")
     @Positive(message = "Health must be positive")
     private int pointDeVie;
-
+    @JsonProperty("attaque_par_seconde")
     @PositiveOrZero(message = "Attack speed cannot be negative")
     private double attaqueParSeconde;
-
+    @JsonProperty("degat_attaque")
     @Positive(message = "Attack damage must be positive")
     private int degatAttaque;
-
+    @JsonProperty("vitesse_de_deplacement")
     @PositiveOrZero(message = "Movement speed cannot be negative")
     private double vitesseDeDeplacement;
-
+    @JsonProperty("chemin_image")
     private String cheminImage;
 
     @NotNull(message = "Map ID is required")

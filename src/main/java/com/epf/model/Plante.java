@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Plante {
     private Long idPlante;
-    private String name;
+    private String nom;
     private String species;
     private int pointDeVie;
     private double attaqueParSeconde;
@@ -27,12 +27,12 @@ public class Plante {
     // Constructors
     public Plante() {}
 
-    public Plante(Long idPlante, String name, String species, int pointDeVie,
+    public Plante(Long idPlante, String nom, int pointDeVie,
                   double attaqueParSeconde, int degatAttaque, int cout,
                   double soleilParSeconde, Effet effet, String cheminImage)
     {
         this.idPlante = idPlante;
-        this.name = name;
+        this.nom = nom;
         this.pointDeVie = pointDeVie;
         this.attaqueParSeconde = attaqueParSeconde;
         this.degatAttaque = degatAttaque;
@@ -46,11 +46,8 @@ public class Plante {
     public Long getIdPlante() { return idPlante; }
     public void setIdPlante(Long idPlante) { this.idPlante = idPlante; }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getSpecies() { return species; }
-    public void setSpecies(String species) { this.species = species; }
+    public String getnom() { return nom; }
+    public void setnom(String nom) { this.nom = nom; }
 
     public int getPointDeVie() { return pointDeVie; }
     public void setPointDeVie(int pointDeVie) { this.pointDeVie = pointDeVie; }

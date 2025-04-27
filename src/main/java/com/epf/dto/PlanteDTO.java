@@ -1,24 +1,31 @@
 package com.epf.dto;
 
 import com.epf.model.Plante;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
 
 public record PlanteDTO(
         Long id_plante,
-        String name,          // No validation
-        String species,       // No validation
-        Integer pointDeVie,   // Nullable
+        String nom,
+        @JsonProperty("point_de_vie")
+        Integer pointDeVie,
+        @JsonProperty("attaque_par_seconde")
         Double attaqueParSeconde,
+        @JsonProperty("degat_attaque")
         Integer degatAttaque,
+        @JsonProperty("cout")
         Integer cout,
+        @JsonProperty("soleil_par_seconde")
         Double soleilParSeconde,
-        String effet,        // Use String instead of Enum
+        @JsonProperty("effet")
+        String effet,
+        @JsonProperty("chemin_image")
         String cheminImage
 )  {
-        // Add default values for nullable fields
+
         public PlanteDTO {
-                if (name == null) name = "Default Plant";
-                if (species == null) species = "Default Species";
+                if (nom == null) nom = "Default Plant";
                 if (pointDeVie == null) pointDeVie = 100;
                 if (attaqueParSeconde == null) attaqueParSeconde = 1.0;
                 if (degatAttaque == null) degatAttaque = 10;
