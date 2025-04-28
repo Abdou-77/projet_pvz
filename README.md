@@ -55,7 +55,3 @@ Cette application est conçue pour fonctionner dans un serveur web avec Java et 
 ## API
 
 L'application utilise **OpenAPI** pour définir l'API. le fichier `src/main/gen/api/openapi.yaml` contient la description de l'API.
-
-## Conclusion
-
-Ce projet constitue une base solide pour un jeu de type "Plantes contre Zombies". Il peut être utilisé pour gérer les données relatives aux cartes, plantes, et zombies.
