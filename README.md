@@ -43,32 +43,9 @@ L'application permet de gérer :
 *   **MySQL :** Un serveur MySQL doit être installé et accessible.
 *   **Serveur d'application web:** Un serveur d'application tel que Tomcat doit être installé et configuré.
 
-**Étapes d'installation :**
-
-1.  **Cloner le projet :**
-```
-bash
-    git clone [URL du dépôt]
-    
-```
-2.  **Configurer la base de données :**
-    *   Créer une base de données MySQL.
-    *   Modifier le fichier `src/main/resources/database.properties` pour configurer la connexion à la base de données (URL, nom d'utilisateur, mot de passe).
-3. **Compiler le projet :**
-    * se placer dans le répertoire du projet et utiliser la commande maven suivante:
-```
-bash
-    mvn clean install
-    
-```
-* cette commande va construire le projet et générer le fichier **CoursEpfBack.war** dans le repertoire **target**.
-4.  **Déployer l'application :**
-    * Copier le fichier `CoursEpfBack.war` dans le dossier `webapps` du serveur Tomcat.
-5. **Redémarrez le serveur**
-
 **Exécution :**
 
-* Démarrer le serveur d'application (par exemple, Tomcat).
+* Démarrer le serveur d'application .
 * L'application sera accessible à l'adresse définie par le serveur (par exemple, `http://localhost:8080/CoursEpfBack`).
 
 **Remarque Importante :**
